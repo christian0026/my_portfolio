@@ -18,3 +18,13 @@ darkModeToggle.addEventListener("click", () => {
         localStorage.setItem("darkMode", "disabled");
     }
 });
+
+// Add shadow to navbar when scrolling
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});

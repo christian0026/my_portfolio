@@ -41,7 +41,7 @@ body {
 header {
     padding: 15px 10%;
     position: fixed;
-    top: 2%;
+    top: 0%;
     left: 0;
     width: 100%;
     display: flex;
@@ -49,6 +49,12 @@ header {
     align-items: center;
     gap: 600px; /* Adjust spacing */
     z-index: 1001;
+    background: #F0FFFD;
+    transition: 0.2s ease-in-out;
+}
+
+header.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -100,24 +106,54 @@ header {
 
 /* DARK MODE */
 .dark-mode {
-    background: #121212;
-    color: #ffffff;
+    background: #171717;
+    color: #F5F5F5;
 }
 
 .dark-mode header {
-    background: rgba(30, 30, 30, 0.9);
+    background: #171717;
 }
 
-.dark-mode .navlist li a {
-    color: #fff;
+.dark-mode .logo,
+.dark-mode p.intro,
+.dark-mode h1.white,
+.dark-mode .navlist li a,
+.dark-mode .section-title,
+.dark-mode h2.section-title,
+.dark-mode h3.project-title,
+.dark-mode p.project-description,
+.about-description {
+    color: #F5F5F5;
+}
+.dark-mode .social-icons a,
+.dark-mode .project-links .github-btn {
+    background-color: #292929;
+    color: #F5F5F5;
+    box-shadow: 2px 2px 0px #00cc66;
+}
+
+.dark-mode span.highlight-green {
+    color: #00E673;
+    text-shadow: 2px 2px 0px #171717;
 }
 
 .dark-mode .navlist li a:hover,
 .dark-mode .navlist li a.active {
-    color: #67ccff;
+    color: #00E673;
 }
 
-/* Add this to your existing CSS */
+.dark-mode p.section-subtitle {
+    color: #00E673;
+}
+
+.dark-mode div.project-card,
+.dark-mode div.about-card {
+    background: #1F1F1F;
+    border: 2px solid #292929;
+    box-shadow: 6px 6px 0px #00E673;
+}
+
+/* hero section */
 
 .hero {
     display: flex;
@@ -128,7 +164,6 @@ header {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 40px;
-    background-color: #F0FFFD;
     min-height: 100vh;
 }
 
@@ -241,10 +276,8 @@ header {
 }
 
 /* Featured Projects Section */
-/* Featured Projects Section */
 .featured-projects {
     padding: 80px 10%;
-    background-color: #F0FFFD;
     text-align: left;
 }
 
@@ -273,13 +306,8 @@ header {
     border: 2px solid #00331a;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 3px 3px 0px #00cc66;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
     box-shadow: 6px 6px 0px #00331a;
+   transition: 0.2s ease;
 }
 
 .project-image img {
@@ -368,3 +396,188 @@ header {
     transform: scale(1.12);
 }
   
+/* Noteworthy Projects Section */
+.noteworthy-projects {
+    padding: 80px 10%;
+    text-align: left;
+}
+
+.noteworthy-projects .section-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #00331a;
+    margin-bottom: 10px;
+}
+
+.noteworthy-projects .section-subtitle {
+    font-family: 'Cascadia', monospace;
+    font-size: 22px;
+    color: #00cc66;
+    margin-bottom: 40px;
+}
+
+.noteworthy-projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 30px; /* Adjust spacing between cards */
+}
+
+.noteworthy-projects .project-card {
+    background-color: #ffffff;
+    border: 2px solid #00331a;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0px #00331a;
+    padding: 20px;
+    position: relative; /* For positioning buttons */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.noteworthy-projects .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 6px 6px 0px #00cc66;
+}
+
+.noteworthy-projects .project-content {
+    position: relative;
+}
+
+.noteworthy-projects .project-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.noteworthy-projects .project-links .project-btn {
+    background-color: #00cc66;
+    color: #fff;
+    padding: 8px 16px;
+    font-family: 'Cascadia', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 3px 3px 0px #00331a;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.noteworthy-projects .project-links .project-btn:hover {
+    transform: scale(1.03);
+}
+
+.noteworthy-projects .project-links .github-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #00331a;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0px #00cc66;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.noteworthy-projects .project-links .github-btn:hover {
+    background-color: #00cc66;
+    color: #fff;
+    box-shadow: 2px 2px 0px #00331a;
+    transform: scale(1.12);
+}
+
+.noteworthy-projects .project-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #00331a;
+    margin-bottom: 10px;
+}
+
+.noteworthy-projects .project-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #00331a;
+    margin-bottom: 16px;
+}
+
+.noteworthy-projects .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.noteworthy-projects .project-tags span {
+    background-color: #00331a;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-family: 'Cascadia', monospace;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 10%;
+    text-align: left;
+}
+
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.about-card {
+    flex: 1;
+    background-color: #ffffff;
+    border: 2px solid #00331a;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0px #00331a;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #00331a;
+    line-height: 1.6;
+}
+
+.about-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-row {
+    display: flex;
+    gap: 20px;
+}
+
+.image-row img {
+    width: 40%; /* Adjust the width to make images smaller */
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    transform: rotate(2deg);
+    transition: transform 0.3s ease;
+    opacity: 50%;
+}
+
+.image-row img:hover {
+    transform: scale(1.15) rotate(0deg);
+    opacity: 100%;
+}
