@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+}
+
+@font-face {
+    font-family: "Cascadia";
+    src: url('../assets/fonts/Cascadia.ttf') format('truetype');
+}
+
+::-webkit-scrollbar {
+    height: .1rem;
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #00331a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00cc66;
+    border-radius: 5rem;
+}
+
+body {
+    background: #F0FFFD;
+    font-family: "Poppins", sans-serif;
+    color: #00331a;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+header {
+    padding: 15px 10%;
+    position: fixed;
+    top: 2%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers everything */
+    align-items: center;
+    gap: 600px; /* Adjust spacing */
+    z-index: 1001;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjusts spacing between the nav links and dark mode toggle */
+}
+
+.logo {
+    font-family: "Kanit", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #00331a;
+}
+
+.navlist {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navlist li a {
+    color: #00331a;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navlist li a:hover,
+.navlist li a.active {
+    color: rgb(0, 230, 115);
+}
+
+
+/* Dark Mode Button */
+#darkModeToggle {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 10px; /* Moves closer to the nav */
+    transition: transform 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    transform: scale(1.1);
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background: rgba(30, 30, 30, 0.9);
+}
+
+.dark-mode .navlist li a {
+    color: #fff;
+}
+
+.dark-mode .navlist li a:hover,
+.dark-mode .navlist li a.active {
+    color: #67ccff;
+}
+
+/* Add this to your existing CSS */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust spacing between left and right */
+    padding: 140px 8%;
+    gap: 0; /* Remove gap entirely */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    background-color: #F0FFFD;
+    min-height: 100vh;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Move image to the left */
+    align-items: center;
+    margin-right: -100px; /* Increase negative margin to bring image closer */
+}
+
+.hero-left .hero-img {
+    width: 280px;
+    height: auto;
+    -moz-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+    transition: 0.2s ease-in-out;
+}
+
+.hero-left .hero-img:hover {
+    -moz-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+
+.hero-right {
+    flex: 1;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -80px; /* Increase negative margin to bring text closer to the image */
+}
+
+.hero-right .intro {
+    font-family: 'Cascadia', monospace;
+    font-size: 22px;
+    margin: 0px 0px 18px;
+    color: #00331a;
+}
+
+.hero-right h1 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 800;
+    font-size: 52px; /* Reduced font size to fit two lines */
+    margin: 0px 0px 50px;
+    line-height: 1.2; /* Adjusted line height */
+    color: #00331a;
+}
+
+.hero-right .highlight-green {
+    color: #00cc66;
+    text-shadow: 2px 2px 0px #00331a;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.project-btn {
+    background-color: #00cc66;
+    color: #fff;
+    padding: 14px 28px;
+    font-family: 'Cascadia', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 3px 3px 0px #00331a;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.project-btn:hover {
+    transform: scale(1.03);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* Adjust spacing between icons */
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Fixed width for perfect circle */
+    height: 50px; /* Fixed height for perfect circle */
+    background-color: #00331a;
+    color: #fff;
+    border-radius: 50%; /* Perfect circle */
+    box-shadow: 2px 2px 0px #00cc66;
+    font-size: 20px;
+    transition: 0.2s ease;
+}
+
+.social-icons a:hover {
+    background-color: #00cc66;
+    color: #fff;
+    box-shadow: 2px 2px 0px #00331a;
+    transform: scale(1.12);
+}
+
+/* Featured Projects Section */
+/* Featured Projects Section */
+.featured-projects {
+    padding: 80px 10%;
+    background-color: #F0FFFD;
+    text-align: left;
+}
+
+.section-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #00331a;
+}
+
+.section-subtitle {
+    font-family: 'Cascadia', monospace;
+    font-size: 22px;
+    color: #00cc66;
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 2px solid #00331a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 3px 3px 0px #00cc66;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 6px 6px 0px #00331a;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #00331a;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #00331a;
+    margin-bottom: 16px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.project-tags span {
+    background-color: #00331a;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: 'Cascadia', monospace;
+}
+
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.project-links .project-btn {
+    background-color: #00cc66;
+    color: #fff;
+    padding: 10px 20px;
+    font-family: 'Cascadia', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 3px 3px 0px #00331a;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.project-links .project-btn:hover {
+    transform: scale(1.03);
+}
+
+.project-links .github-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #00331a;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0px #00cc66;
+    font-size: 18px;
+    transition: 0.2s ease;
+}
+
+.project-links .github-btn:hover {
+    background-color: #00cc66;
+    color: #fff;
+    box-shadow: 2px 2px 0px #00331a;
+    transform: scale(1.12);
+}
+  

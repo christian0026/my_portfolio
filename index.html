@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>@christianfernandez</title>
+</head>
+<body>
+
+    <!-- navbar -->
+    <header>
+        <a href="#" class="logo">@christianfernandez.</a>
+    
+        <div class="nav-container">
+            <nav>
+                <ul class="navlist">
+                    <li><a href="#home" class="active">home</a></li>
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </nav>
+    
+            <button id="darkModeToggle">
+                <span id="darkModeIcon">🌙</span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- hero section -->
+    <section class="hero">
+        <div class="hero-left">
+            <img src="assets/hero-img.png" alt="Hero Avatar" class="hero-img">
+        </div>
+        <div class="hero-right">
+            <p class="intro">Hello, they call me Chan.</p>
+            <h1>I <span class="highlight-green">design</span>, <span class="highlight-green">create</span>, <br>and <span class="highlight-green">develop</span> things.</h1>
+
+            <div class="hero-buttons">
+                <button class="project-btn">projects</button>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="featured-projects">
+        <h2 class="section-title">featured projects</h2>
+        <p class="section-subtitle">_selected projects</p>
+      
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/mindbuddy.png" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">AI Mental Health Companion</h3>
+                    <p class="project-description">MindBuddy provides personalized support and self-care guidance to help you manage stress and maintain your mental well-being.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Javascript</span>
+                        <span>React.js</span>
+                        <span>Bootstrap 5</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="project-btn"><a href="https://christian0026.github.io/mental-health-companion" target="_blank" style="color: #fff;">take a look</a></button>
+                        <a href="https://github.com/christian0026/mental-health-companion.git" class="github-btn" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+      
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/project2.png" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Project Title Two</h3>
+                    <p class="project-description">Another description of a cool project that you’ve worked on.</p>
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="project-btn">take a look</button>
+                        <a href="#" class="github-btn" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+      
+    <script src="js/script.js"></script>
+</body>
+</html>
