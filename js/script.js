@@ -28,3 +28,25 @@ window.addEventListener("scroll", () => {
         header.classList.remove("scrolled");
     }
 });
+
+// Contact Form Submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Send email using EmailJS
+    emailjs.send('service_1f0ia7n', 'template_1zh21ap', {
+        to_email: 'christianfernandezxc2@gmail.com', // Replace with your Gmail address
+        from_email: email,
+        message: message
+    })
+    .then(function (response) {
+        alert('Message sent successfully!');
+        document.getElementById('contactForm').reset(); // Clear the form
+    }, function (error) {
+        alert('Failed to send message. Please try again.');
+    });
+});
+

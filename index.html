@@ -12,6 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    
+    <script>
+        (function () {
+            emailjs.init('7Kwf9Rkc38BdW1Oar');
+        })();
+    </script>
     <title>@christianfernandez</title>
 </head>
 <body>
@@ -23,7 +33,7 @@
         <div class="nav-container">
             <nav>
                 <ul class="navlist">
-                    <li><a href="#home"  class="active">home</a></li>
+                    <li><a href="#home">home</a></li>
                     <li><a href="#projects">projects</a></li>
                     <li><a href="#about">about</a></li>
                     <li><a href="#contact">contact</a></li>
@@ -36,15 +46,17 @@
         </div>
     </header>
     
-    <!-- hero section -->
+     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-left">
             <img src="assets/hero-img.png" alt="Hero Avatar" class="hero-img">
         </div>
         <div class="hero-right">
             <p class="intro">Hello, they call me Chan.</p>
-            <h1 class="white">I <span class="highlight-green">design</span>, <span class="highlight-green">create</span>, <br>and <span class="highlight-green">develop</span> things.</h1>
-
+            <h1 class="white">
+                I <span class="highlight-green">design</span>, <span class="highlight-green">create</span>, <br>
+                and <span class="highlight-green">develop</span> things.
+            </h1>
             <div class="hero-buttons">
                 <button class="project-btn"><a href="#projects" style="color: #fff;">projects</a></button>
                 <div class="social-icons">
@@ -53,17 +65,16 @@
                     <a href="https://www.facebook.com/datboii.christian" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.instagram.com/cxcx.chann/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <section class="featured-projects">
-        <h2 class="section-title">featured projects</h2>
-        <p class="section-subtitle">_selected projects</p>
+    <section class="featured-projects" data-aos="fade-up">
+        <h2 class="section-title" data-aos="fade-right">featured projects</h2>
+        <p class="section-subtitle" data-aos="fade-left">_selected projects</p>
       
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in">
                 <div class="project-image">
                     <img src="assets/mindbuddy.png" alt="Project 1">
                 </div>
@@ -84,7 +95,7 @@
                 </div>
             </div>
       
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="project-image">
                     <img src="assets/project2.png" alt="Project 2">
                 </div>
@@ -105,13 +116,13 @@
     </section>
 
     <!-- Noteworthy Projects Section -->
-    <section id="projects" class="noteworthy-projects">
-        <h2 class="section-title">noteworthy projects</h2>
-        <p class="section-subtitle">_what im capable of</p>
+    <section id="projects" class="noteworthy-projects"  data-aos="fade-up">
+        <h2 class="section-title" data-aos="fade-right">noteworthy projects</h2>
+        <p class="section-subtitle" data-aos="fade-left">_what im capable of</p>
     
-        <div class="projects-grid">
+        <div class="projects-grid" data-aos="zoom-in">
             <!-- Project Card 1 -->
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="project-content">
                     <div class="project-links">
                         <button class="project-btn"><a href="https://christian0026.github.io/mental-health-companion/" target="_blank" style="color: #fff;">take a look</a></button>
@@ -123,13 +134,14 @@
                         <span>html</span>
                         <span>css</span>
                         <span>javascript</span>
-                        <span>vue.js</span>
+                        <span>react.js</span>
+                        <span>bootstrap 5</span>
                     </div>
                 </div>
             </div>
 
             <!-- Project Card 2 -->
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="project-content">
                     <div class="project-links">
                         <button class="project-btn">take a look</button>
@@ -147,7 +159,7 @@
             </div>
 
             <!-- Project Card 3 -->
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="project-content">
                     <div class="project-links">
                         <button class="project-btn">take a look</button>
@@ -165,7 +177,7 @@
             </div>
 
             <!-- Project Card 4 -->
-            <div class="project-card">
+            <div class="project-card"   data-aos="zoom-in" data-aos-delay="200">
                 <div class="project-content">
                     <div class="project-links">
                         <button class="project-btn">take a look</button>
@@ -183,7 +195,7 @@
             </div>
 
             <!-- Project Card 5 -->
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="project-content">
                     <div class="project-links">
                         <button class="project-btn">take a look</button>
@@ -201,7 +213,7 @@
             </div>
 
             <!-- Project Card 6 -->
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="project-content">
                     <div class="project-links">
                         <button class="project-btn">take a look</button>
@@ -220,10 +232,10 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section" data-aos="fade-up">
         <div class="about-container">
             <!-- Left Side: Card -->
-            <div class="about-card">
+            <div class="about-card" data-aos="fade-right">
                 <h2 class="section-title">about</h2>
                 <p class="section-subtitle">what i love to do?</p>
                 <div class="about-content">
@@ -240,7 +252,7 @@
             </div>
 
             <!-- Right Side: Images -->
-            <div class="about-images">
+            <div class="about-images" data-aos="fade-left">
                 <div class="image-row">
                     <img src="assets/image1.jpg" alt="Image 1">
                     <img src="assets/image2.jpg" alt="Image 2">
@@ -253,8 +265,66 @@
         </div>
     </section>
 
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section" data-aos="fade-up">
+        <div class="contact-container">
+            <!-- Left Side: Image -->
+            <div class="contact-left" data-aos="fade-right">
+                <img src="assets/hero-img.png" alt="Contact Avatar" class="contact-img">
+            </div>
+
+            <!-- Right Side: Contact Card -->
+            <div class="contact-card" data-aos="fade-left">
+                <h2 class="section-title">Let's Work Together</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Enter your message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="message-btn">Message Me</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer" data-aos="fade-up">
+        <div class="footer-container">
+            <!-- Social Icons (Left Side) -->
+            <div class="social-icons" data-aos="fade-right">
+                <a href="https://github.com/christian0026" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="www.linkedin.com/in/christian-fernandez-b34173358" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/datboii.christian" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/cxcx.chann/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <!-- Copyright Text (Right Side) -->
+            <div class="copyright">
+                &copy; 2023 Christian Fernandez. All rights reserved.
+            </div>
+        </div>
+    </footer>
     
       
     <script src="js/script.js"></script>
+
+    
+
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true, // Animation only happens once
+            easing: 'ease-in-out', // Smooth animation easing
+        });
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("AOS Initialized");
+        });
+    </script>
+    
 </body>
 </html>
