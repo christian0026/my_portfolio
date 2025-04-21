@@ -151,6 +151,10 @@ header.scrolled {
     box-shadow: 6px 6px 0px #00E673;
 }
 
+.dark-mode p.about-description {
+    color: #F0FFFD;
+}
+
 /* hero section */
 
 .hero {
