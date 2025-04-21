@@ -134,7 +134,7 @@ header.scrolled {
 .dark-mode span.highlight-green {
     color: #00E673;
     text-shadow: 2px 2px 0px #171717;
-}g
+}
 
 .dark-mode .navlist li a:hover {
     color: #00E673;
@@ -156,7 +156,7 @@ header.scrolled {
 }
 
 /* hero section */
-g
+
 .hero {
     display: flex;
     align-items: center;
