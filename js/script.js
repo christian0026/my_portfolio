@@ -1,3 +1,39 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all the elements we want to animate
+    const logo = document.querySelector('.logo');
+    const navItems = document.querySelectorAll('.navlist li');
+    const darkModeToggle = document.querySelector('#darkModeToggle');
+    const heroImg = document.querySelector('.hero-left .hero-img');
+    const heroRight = document.querySelector('.hero-right');
+    
+    // Function to animate with delay
+    function animateWithDelay(element, animationClass, delay) {
+      setTimeout(() => {
+        element.style.animation = animationClass;
+        element.style.opacity = 1;
+      }, delay);
+    }
+    
+    // Logo animation - now slides from top like nav items
+    animateWithDelay(logo, 'slideFromTop 0.8s ease forwards', 500);
+    
+    // Nav items animation - one after another with longer delays
+    navItems.forEach((item, index) => {
+      animateWithDelay(item, 'slideFromTop 0.7s ease forwards', 1000 + (index * 300));
+    });
+    
+    // Dark mode toggle animation
+    animateWithDelay(darkModeToggle, 'fadeIn 0.7s ease forwards', 1000 + (navItems.length * 300) + 200);
+    
+    // Hero image slides in from left
+    const navAnimationDuration = 1000 + (navItems.length * 300) + 600;
+    animateWithDelay(heroImg, 'slideFromLeft 1.5s ease forwards', navAnimationDuration);
+    
+    // Hero right content fades in
+    animateWithDelay(heroRight, 'fadeIn 1.8s ease forwards', navAnimationDuration + 700);
+  });
+
+
 const darkModeToggle = document.getElementById("darkModeToggle");
 const darkModeIcon = document.getElementById("darkModeIcon");
 
@@ -50,3 +86,120 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     });
 });
 
+// JavaScript for Project Image Sliders
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all image sliders
+    const projectImageSliders = document.querySelectorAll('.project-image-slider');
+    
+    projectImageSliders.forEach(slider => {
+        const sliderImages = slider.querySelector('.slider-images');
+        const images = slider.querySelectorAll('.slider-images img');
+        const prevArrow = slider.querySelector('.slider-arrow.prev');
+        const nextArrow = slider.querySelector('.slider-arrow.next');
+        const dotsContainer = slider.querySelector('.slider-dots');
+        
+        // Exit if no images
+        if (images.length <= 1) return;
+        
+        // Create dots for each image
+        images.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = index === 0 ? 'slider-dot active' : 'slider-dot';
+            dot.dataset.index = index;
+            dotsContainer.appendChild(dot);
+        });
+        
+        // Get dots after they're created
+        const dots = slider.querySelectorAll('.slider-dot');
+        
+        // Slider state
+        let currentSlide = 0;
+        let autoSlideInterval;
+        
+        // Function to go to a specific slide
+        function goToSlide(slideIndex) {
+            if (slideIndex < 0) {
+                slideIndex = images.length - 1;
+            } else if (slideIndex >= images.length) {
+                slideIndex = 0;
+            }
+            
+            currentSlide = slideIndex;
+            sliderImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active dot
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+        
+        // Start automatic sliding
+        function startAutoSlide() {
+            stopAutoSlide();
+            autoSlideInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 4000); // Change slide every 4 seconds
+        }
+        
+        // Stop automatic sliding
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+        
+        // Arrow navigation
+        prevArrow.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(currentSlide - 1);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+        
+        nextArrow.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(currentSlide + 1);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+        
+        // Dot navigation
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.dataset.index));
+                stopAutoSlide();
+                startAutoSlide();
+            });
+        });
+        
+        // Pause auto-sliding when hovering over slider
+        slider.addEventListener('mouseenter', stopAutoSlide);
+        slider.addEventListener('mouseleave', startAutoSlide);
+        
+        // Handle touch events for mobile swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoSlide();
+        }, { passive: true });
+        
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            startAutoSlide();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 30) {
+                // Swipe left - go to next slide
+                goToSlide(currentSlide + 1);
+            } else if (touchEndX - touchStartX > 30) {
+                // Swipe right - go to previous slide
+                goToSlide(currentSlide - 1);
+            }
+        }
+        
+        // Start the auto slide show
+        startAutoSlide();
+    });
+});
