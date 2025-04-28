@@ -38,16 +38,16 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Mobile-first Navigation */
 header {
-    padding: 15px 10%;
+    padding: 15px 5%;
     position: fixed;
-    top: 0%;
+    top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: center; /* Centers everything */
+    justify-content: space-between;
     align-items: center;
-    gap: 600px; /* Adjust spacing */
     z-index: 1001;
     background: #F0FFFD;
     transition: 0.2s ease-in-out;
@@ -57,23 +57,35 @@ header.scrolled {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.nav-container {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Adjusts spacing between the nav links and dark mode toggle */
-}
-
 .logo {
     font-family: "Kanit", sans-serif;
     font-size: 18px;
     font-weight: 500;
     color: #00331a;
+    z-index: 1002; /* Keep logo above mobile menu */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Mobile menu button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #00331a;
+    z-index: 1002; /* Keep button above mobile menu */
 }
 
 .navlist {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 }
 
 .navlist li a {
@@ -88,19 +100,201 @@ header.scrolled {
     color: rgb(0, 230, 115);
 }
 
-
-/* Dark Mode Button */
 #darkModeToggle {
     background: none;
     border: none;
     font-size: 22px;
     cursor: pointer;
-    margin-left: 10px; /* Moves closer to the nav */
     transition: transform 0.3s ease;
 }
 
 #darkModeToggle:hover {
     transform: scale(1.1);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    header {
+        padding: 12px 5%;
+    }
+    
+    .navlist {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: #F0FFFD;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container.active {
+        right: 0;
+    }
+    
+    .navlist {
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+    
+    .navlist li a {
+        font-size: 18px;
+    }
+    
+    /* Dark mode styles for mobile menu */
+    .dark-mode .nav-container {
+        background: #171717;
+    }
+}
+
+/* Responsive styles for all sections */
+@media (max-width: 992px) {
+    .hero {
+        padding: 120px 5%;
+        min-height: auto;
+    }
+    
+    .hero-left .hero-img {
+        width: 240px;
+    }
+    
+    .hero-right h1 {
+        font-size: 42px;
+    }
+    
+    .featured-projects,
+    .noteworthy-projects,
+    .about-section,
+    .contact-section {
+        padding: 60px 5%;
+    }
+    
+    .noteworthy-projects .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 100px 5% 60px;
+    }
+    
+    .hero-left {
+        margin-right: 0;
+    }
+    
+    .hero-right {
+        margin-left: 0;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .noteworthy-projects .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .contact-left {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .contact-card {
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-right h1 {
+        font-size: 32px;
+    }
+    
+    .hero-right .intro {
+        font-size: 18px;
+    }
+    
+    .section-title {
+        font-size: 30px;
+    }
+    
+    .section-subtitle {
+        font-size: 18px;
+    }
+    
+    .noteworthy-projects .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-row {
+        flex-direction: column;
+    }
+    
+    .image-row img {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 16px;
+    }
+    
+    .hero-left .hero-img {
+        width: 200px;
+    }
+    
+    .hero-right h1 {
+        font-size: 28px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
 }
 
 /* DARK MODE */
