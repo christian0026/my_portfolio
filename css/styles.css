@@ -1423,3 +1423,74 @@ html:not(.aos-enabled) [data-aos] {
     transform: translateY(50px);
 }
 
+
+/* School Related Section */
+.school-related {
+    padding: 80px 10%;
+    text-align: left;
+}
+
+.school-related .section-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #00331a;
+    margin-bottom: 10px;
+}
+
+.school-related .section-subtitle {
+    font-family: 'Cascadia', monospace;
+    font-size: 22px;
+    color: #00cc66;
+    margin-bottom: 40px;
+}
+
+.school-related .school-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 30px; /* Adjust spacing between cards */
+}
+
+.school-related .school-card {
+    background-color: #ffffff;
+    border: 2px solid #00331a;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0px #00331a;
+    padding: L0px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Keeps the image contained within the border radius */
+}
+
+.school-related .school-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 6px 6px 0px #00cc66;
+}
+
+.school-related .school-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .school-related .school-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .school-related .school-grid {
+        grid-template-columns: 1fr; /* 1 card per row on mobile */
+    }
+    
+    .school-related .section-title {
+        font-size: 30px;
+    }
+    
+    .school-related .section-subtitle {
+        font-size: 18px;
+    }
+}
