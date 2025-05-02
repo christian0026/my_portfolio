@@ -1494,3 +1494,21 @@ html:not(.aos-enabled) [data-aos] {
         font-size: 18px;
     }
 }
+
+.cv-button {
+    background-color: #00cc66;
+    color: #fff;
+    padding: 14px 28px;
+    font-family: 'Cascadia', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 3px 3px 0px #00331a;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cv-button:hover {
+    transform: scale(1.03);
+}
